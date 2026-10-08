@@ -3,9 +3,16 @@
 Sistema de *business intelligence* para una empresa patrimonial inmobiliaria, construido con datos reales y publicado aquí anonimizado. Lee los ficheros de **FacturaPlus** (facturas, recibos, cobros y contratos en DBF), los ordena en una base de datos **PostgreSQL organizada por inmuebles**, comprueba que **cada euro queda contado y explicado**, y alimenta un **cuadro de mando de Power BI** con rentabilidad, ocupación, contratos y deuda.
 
 ```
-FacturaPlus (DBF)  ─┐
-Tres Excel de       ├─►  Notebook de carga  ─►  PostgreSQL  ─►  Power BI
-referencia          ─┘   (lee, limpia, cuadra)   (por inmuebles)
+FacturaPlus (DBF) + tres Excel de referencia
+                    |
+                    v
+   Notebook de carga (lee, limpia, cuadra)
+                    |
+                    v
+          PostgreSQL (por inmuebles)
+                    |
+                    v
+                Power BI
 ```
 
 El notebook solo **lee** del programa de facturación; nunca escribe en él.
